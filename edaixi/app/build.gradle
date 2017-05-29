@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+
+android {
+    aaptOptions.cruncherEnabled = false
+    aaptOptions.useNewCruncher = false
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "bjtu.activity"
+        minSdkVersion 14
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                cppFlags "-frtti -fexceptions"
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+    sourceSets{
+        main{
+            jniLibs.srcDirs 'libs'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.2.0'
+    compile 'com.google.android.gms:play-services-appindexing:9.8.0'
+    compile 'com.android.support:design:25.2.0'
+    testCompile 'junit:junit:4.12'
+    compile files('libs/universal-image-loader-1.9.2-SNAPSHOT-with-sources.jar')
+    compile files('libs/baidumapapi_base_v4_3_0.jar')
+    compile files('libs/baidumapapi_cloud_v4_3_0.jar')
+    compile files('libs/baidumapapi_map_v4_3_0.jar')
+    compile files('libs/baidumapapi_radar_v4_3_0.jar')
+    compile files('libs/baidumapapi_search_v4_3_0.jar')
+    compile files('libs/baidumapapi_util_v4_3_0.jar')
+    compile files('libs/baidumapapi_base_v4_3_0.jar')
+    compile files('libs/mpandroidchartlibrary-2-1-6.jar')
+}

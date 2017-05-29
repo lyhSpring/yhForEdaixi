@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_product_grid"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="bjtu.activity.ProductGridActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/showCategory"
+        android:id="@+id/showCategoryTxt"/>
+
+    <GridView
+        android:id="@+id/productGridView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/showCategoryTxt"
+        android:numColumns="2"
+        android:gravity="center_horizontal"
+        android:stretchMode="columnWidth"/>
+
+    <TextView
+        android:id="@+id/hintForNoProducts"
+        android:text="@string/noProduct"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/goToShoppingCar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginRight="@dimen/linearLayout_horizontal_margin"
+        app:srcCompat="@android:drawable/ic_dialog_dialer"
+        android:layout_gravity="bottom|end"/>
+
+</RelativeLayout>

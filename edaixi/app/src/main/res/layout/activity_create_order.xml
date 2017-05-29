@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_create_order"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/grayBgc"
+    tools:context="bjtu.activity.CreateOrderActivity">
+
+    <LinearLayout
+        android:id="@+id/locationLayout"
+        android:padding="@dimen/fab_margin"
+        android:gravity="center_vertical"
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/selectLocation"
+            android:hint="@string/hintForLocation"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/order_to_detail"
+            android:layout_alignParentRight="true"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/timeLayout"
+        android:padding="@dimen/fab_margin"
+        android:gravity="center_vertical"
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/fab_margin"
+        android:layout_below="@id/locationLayout">
+
+        <TextView
+            android:id="@+id/selectDate"
+            android:hint="@string/hintForDate"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/selectTime"
+            android:hint="@string/hintForTime"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+    </LinearLayout>
+    <Button
+        android:id="@+id/createOrderBtn"
+        android:text="立即预约"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

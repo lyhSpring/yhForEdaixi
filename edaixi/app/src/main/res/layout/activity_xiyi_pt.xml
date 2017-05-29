@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_xiyi_pt"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="bjtu.activity.XiyiPtActivity">
+        <Spinner
+            android:id="@+id/regionSpinner"
+            android:entries="@array/regions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <bjtu.ownClass.CycleViewPager
+            android:id="@+id/scrollingViewpager"
+            android:scaleType="fitXY"
+            android:layout_below="@id/regionSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="165dp">
+        </bjtu.ownClass.CycleViewPager>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/scrollingViewpager"
+            android:gravity="center"
+            android:text="@string/professionalWashing"
+            android:id="@+id/washingTxt"/>
+
+        <GridView
+            android:id="@+id/businessGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/washingTxt"
+            android:gravity="center_horizontal"
+            android:numColumns="4"/>
+        <TextView
+            android:id="@+id/hotGoodsTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_below="@id/businessGrid"
+            android:text="@string/hotGoods"/>
+        <GridView
+            android:id="@+id/hotGoodsGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_below="@id/hotGoodsTxt"
+            android:numColumns="2"
+            android:stretchMode="columnWidth"/>
+</RelativeLayout>
